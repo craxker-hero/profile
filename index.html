@@ -736,50 +736,25 @@
   <div id="projects-grid" class="proj-list" aria-live="polite" aria-label="Proyectos"></div>
 </section>
 
-<!-- ══ LOFI PLAYER ══ -->
+<!-- ══ SPOTIFY ══ -->
 <section id="lofi">
   <div class="wrap">
     <div class="sec-head reveal" style="text-align:center; margin-bottom:40px;">
-      <p class="sec-tag" style="justify-content:center;">Ambiente</p>
-      <h2 class="sec-title">Lofi <span class="a">Player ♪</span></h2>
+      <p class="sec-tag" style="justify-content:center;">Música</p>
+      <h2 class="sec-title">Mi <span class="a">Playlist ♪</span></h2>
     </div>
-    <div class="lofi-wrap reveal">
-      <div class="lofi-top">
-        <span class="lofi-dot r"></span>
-        <span class="lofi-dot y"></span>
-        <span class="lofi-dot g"></span>
-        <span class="lofi-title-bar">LOFI.RADIO ～ NOW PLAYING</span>
-      </div>
-      <div class="lofi-body">
-        <div class="lofi-viz" id="lofi-viz">
-          <div class="viz-bar" style="height:12px"></div>
-          <div class="viz-bar" style="height:24px"></div>
-          <div class="viz-bar" style="height:8px"></div>
-          <div class="viz-bar" style="height:32px"></div>
-          <div class="viz-bar" style="height:16px"></div>
-          <div class="viz-bar" style="height:28px"></div>
-          <div class="viz-bar" style="height:10px"></div>
-          <div class="viz-bar" style="height:20px"></div>
-        </div>
-        <div class="lofi-song-info">
-          <span class="lofi-song-name" id="song-name">♪ Lofi Hip Hop Radio</span>
-          <span class="lofi-song-sub" id="song-sub">Beats to relax / study to ～</span>
-        </div>
-        <div class="lofi-progress" id="lofi-prog">
-          <div class="lofi-progress-fill" id="lofi-fill"></div>
-        </div>
-        <div class="lofi-controls">
-          <button class="lofi-btn" id="btn-prev" aria-label="Anterior">◀◀</button>
-          <button class="lofi-btn play-btn" id="btn-play" aria-label="Play/Pause">▶ PLAY</button>
-          <button class="lofi-btn" id="btn-next" aria-label="Siguiente">▶▶</button>
-        </div>
-        <div class="lofi-volume">
-          <span class="lofi-volume-label">VOL</span>
-          <input type="range" id="vol-slider" min="0" max="100" value="70" aria-label="Volumen"/>
-        </div>
-      </div>
+    <div class="reveal" style="max-width:480px;margin:0 auto;">
+      <iframe
+        src="https://open.spotify.com/embed/playlist/5FmmxErJczcrEwIFGIviYo?utm_source=generator&theme=0"
+        width="100%"
+        height="352"
+        frameborder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+        style="border-radius:12px;"
+      ></iframe>
     </div>
-    <iframe id="yt-frame" allow="autoplay" aria-hidden="true"></iframe>
   </div>
 </section>
 
