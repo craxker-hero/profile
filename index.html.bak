@@ -10,7 +10,7 @@
        Estos tags son lo único que leen. Actualiza a mano.
   ============================================= -->
   <title>Tu Nombre — Frontend Developer</title>
-  <meta name="description" content="Portfolio de Ruka's. Frontend Developer especializado en interfaces rápidas, accesibles y con identidad visual. React, TypeScript, CSS3, Node.js." />
+  <meta name="description" content="Portfolio de Tu Nombre. Frontend Developer especializado en interfaces rápidas, accesibles y con identidad visual. React, TypeScript, CSS3, Node.js." />
   <meta name="author" content="Tu Nombre" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://tunombre.dev/" />
@@ -18,7 +18,7 @@
   <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
   <meta property="og:type"         content="website" />
   <meta property="og:url"          content="https://tunombre.dev/" />
-  <meta property="og:title"        content="Ruka's a— Frontend Developer" />
+  <meta property="og:title"        content="Tu Nombre — Frontend Developer" />
   <meta property="og:description"  content="Interfaces rápidas, accesibles y con identidad visual." />
   <meta property="og:image"        content="https://tunombre.dev/assets/img/og-image.png" />
   <meta property="og:image:width"  content="1200" />
@@ -297,8 +297,8 @@
     </div>
     <p class="reveal" style="color:var(--c-dim);max-width:480px;margin:0 auto;">Disponible para proyectos freelance, posiciones full-time y colaboraciones open source.</p>
     <div class="contact-grid reveal">
-      <a href="guzmanjuliansebastian@gmail.com" class="contact-card"><span class="contact-icon" aria-hidden="true">✉</span><span class="contact-label">Email</span></a>
-      <a href="https://github.com/craxker-hero.com" target="_blank" rel="noopener noreferrer" class="contact-card"><span class="contact-icon" aria-hidden="true">⌥</span><span class="contact-label">GitHub</span></a>
+      <a href="mailto:tu@email.com" class="contact-card"><span class="contact-icon" aria-hidden="true">✉</span><span class="contact-label">Email</span></a>
+      <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="contact-card"><span class="contact-icon" aria-hidden="true">⌥</span><span class="contact-label">GitHub</span></a>
       <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="contact-card"><span class="contact-icon" aria-hidden="true">⬡</span><span class="contact-label">LinkedIn</span></a>
       <a href="./assets/cv.pdf" class="contact-card"><span class="contact-icon" aria-hidden="true">↓</span><span class="contact-label">Descargar CV</span></a>
     </div>
@@ -307,7 +307,7 @@
 
 <footer>
   <span>// MADE WITH ❤ &amp; CAFFEINE ·</span>&nbsp;
-  <span>© 2026 Ruka's</span>&nbsp;·&nbsp;
+  <span>© 2026 TU NOMBRE</span>&nbsp;·&nbsp;
   <span>BUILD 2026.02.28</span>
 </footer>
 
