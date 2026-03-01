@@ -17,9 +17,16 @@ function renderCard(p){
       default:    return `<span>${t}</span>`;
     }
   }).join('<br>');
-  const visual = p.image
-    ? `<img src="${esc(p.image)}" alt="${esc(p.title)}" loading="lazy">`
-    : `<div class="mock" aria-hidden="true">${p.emoji}</div>`;
+  const preview = p.image
+    ? `<img src="${esc(p.image)}" alt="${esc(p.title)}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">`
+    : `<img
+        src="https://api.microlink.io/?url=${encodeURIComponent(p.url)}&screenshot=true&meta=false&embed=screenshot.url"
+        alt="Preview de ${esc(p.title)}"
+        loading="lazy"
+        style="width:100%;height:100%;object-fit:cover;"
+        onerror="this.parentElement.innerHTML='<div class=\'mock\'>${p.emoji}</div>'"
+      >`;
+  const visual = preview;
   return `
     <article class="proj-item reveal" id="proj-${esc(p.id)}" aria-label="${esc(p.title)}">
       <div class="proj-img">
