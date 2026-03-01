@@ -1,0 +1,130 @@
+[
+  {
+    "id": "dashflow-crm",
+    "number": "01",
+    "title": "DashFlow CRM",
+    "tagline": "De 3 hojas de Excel a una sola interfaz con estado global.",
+    "why": "El cliente gestionaba leads en 3 hojas de Excel distintas. Reemplacé esa fricción con queries optimizadas y un único estado centralizado. El reto real fue el optimistic update: la UI no podía esperar al servidor.",
+    "emoji": "⚡",
+    "image": null,
+    "tags": [
+      { "label": "React",      "color": "green"  },
+      { "label": "Node.js",    "color": "cyan"   },
+      { "label": "PostgreSQL", "color": "pink"   }
+    ],
+    "snippet": {
+      "lang": "JavaScript",
+      "lines": [
+        { "type": "comment", "text": "// Hook: optimistic update sin bloquear la UI" },
+        { "type": "kw",      "text": "const " },
+        { "type": "fn",      "text": "useOptimisticLeads" },
+        { "type": "plain",   "text": " = () => {" },
+        { "type": "plain",   "text": "  const [leads, setLeads] = useState([]);" },
+        { "type": "plain",   "text": "" },
+        { "type": "kw",      "text": "  const " },
+        { "type": "fn",      "text": "updateLead" },
+        { "type": "plain",   "text": " = async (id, patch) => {" },
+        { "type": "comment", "text": "    // Actualiza UI de inmediato" },
+        { "type": "plain",   "text": "    setLeads(prev => prev.map(l =>" },
+        { "type": "plain",   "text": "      l.id === id ? { ...l, ...patch } : l" },
+        { "type": "plain",   "text": "    ));" },
+        { "type": "kw",      "text": "    try " },
+        { "type": "plain",   "text": "{ await api.patch(`/leads/${id}`, patch); }" },
+        { "type": "kw",      "text": "    catch " },
+        { "type": "plain",   "text": "{ /* rollback silencioso */ }" },
+        { "type": "plain",   "text": "  };" },
+        { "type": "plain",   "text": "  return { leads, updateLead };" },
+        { "type": "plain",   "text": "};" }
+      ]
+    },
+    "metrics": [
+      { "value": "3x",  "label": "Velocidad" },
+      { "value": "40%", "label": "Menos clicks" },
+      { "value": "98",  "label": "Lighthouse" }
+    ],
+    "url": "https://github.com/",
+    "featured": true
+  },
+  {
+    "id": "pixel-engine",
+    "number": "02",
+    "title": "PixelEngine",
+    "tagline": "Game loop estable con ECS minimalista. Zero dependencias.",
+    "why": "Quería demostrar que JS puro puede manejar un game loop eficiente sin frameworks. Implementé un Entity Component System desde cero y aprendí que el mayor enemigo del rendimiento es el GC, no la lógica del juego.",
+    "emoji": "🎮",
+    "image": null,
+    "tags": [
+      { "label": "Canvas API", "color": "yellow" },
+      { "label": "JS Vanilla", "color": "green"  }
+    ],
+    "snippet": {
+      "lang": "JavaScript",
+      "lines": [
+        { "type": "comment", "text": "// Game loop estable con delta time capeado" },
+        { "type": "kw",      "text": "class " },
+        { "type": "fn",      "text": "Engine" },
+        { "type": "plain",   "text": " {" },
+        { "type": "plain",   "text": "  #lastTime = 0;" },
+        { "type": "plain",   "text": "" },
+        { "type": "plain",   "text": "  #loop = (timestamp) => {" },
+        { "type": "kw",      "text": "    const " },
+        { "type": "plain",   "text": "dt = (timestamp - this.#lastTime) / " },
+        { "type": "num",     "text": "1000" },
+        { "type": "plain",   "text": ";" },
+        { "type": "plain",   "text": "    this.#lastTime = timestamp;" },
+        { "type": "comment", "text": "    // Cap a 16ms evita el 'spiral of death'" },
+        { "type": "plain",   "text": "    this.update(Math.min(dt, " },
+        { "type": "num",     "text": "0.016" },
+        { "type": "plain",   "text": "));" },
+        { "type": "plain",   "text": "    this.render();" },
+        { "type": "plain",   "text": "    requestAnimationFrame(this.#loop);" },
+        { "type": "plain",   "text": "  };" },
+        { "type": "plain",   "text": "}" }
+      ]
+    },
+    "metrics": [
+      { "value": "60fps", "label": "Constante" },
+      { "value": "12kb",  "label": "Bundle size" },
+      { "value": "2.4k",  "label": "GitHub stars" }
+    ],
+    "url": "https://github.com/",
+    "featured": true
+  },
+  {
+    "id": "retro-portfolio",
+    "number": "03",
+    "title": "Este Portafolio",
+    "tagline": "HTML, CSS y JS vanilla. Sin frameworks. Sin excusas.",
+    "why": "La restricción fue la premisa: demostrar que un HTML/CSS/JS bien escrito puede competir visualmente con cualquier app React. El resultado habla solo.",
+    "emoji": "💾",
+    "image": null,
+    "tags": [
+      { "label": "HTML5",  "color": "pink"   },
+      { "label": "CSS3",   "color": "cyan"   },
+      { "label": "JS ES2024", "color": "yellow" }
+    ],
+    "snippet": {
+      "lang": "CSS",
+      "lines": [
+        { "type": "comment", "text": "/* Glitch effect: solo CSS, cero JS */" },
+        { "type": "fn",      "text": ".glitch" },
+        { "type": "plain",   "text": "::before {" },
+        { "type": "plain",   "text": "  content: attr(data-text);" },
+        { "type": "plain",   "text": "  position: absolute; inset: 0;" },
+        { "type": "plain",   "text": "  color: var(--c-pink);" },
+        { "type": "plain",   "text": "  clip-path: polygon(0 0,100% 0,100% 35%,0 35%);" },
+        { "type": "plain",   "text": "  animation: glitch " },
+        { "type": "num",     "text": "4s" },
+        { "type": "plain",   "text": " infinite;" },
+        { "type": "plain",   "text": "}" }
+      ]
+    },
+    "metrics": [
+      { "value": "0",    "label": "Dependencias" },
+      { "value": "100",  "label": "Lighthouse" },
+      { "value": "<8kb", "label": "HTML+JS" }
+    ],
+    "url": "https://github.com/",
+    "featured": true
+  }
+]
