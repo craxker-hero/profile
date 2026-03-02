@@ -151,33 +151,74 @@
       position: fixed; inset: 0; z-index: 99999;
       background: var(--bg);
       display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: 20px;
-      transition: opacity .6s ease, visibility .6s ease;
+      align-items: center; justify-content: center; gap: 24px;
+      transition: opacity .8s ease, visibility .8s ease;
     }
     #loader.hide { opacity: 0; visibility: hidden; }
-    .loader-name {
-      font-family: var(--px); font-size: clamp(1rem, 4vw, 2rem);
-      color: var(--pink); text-shadow: 0 0 20px rgba(255,77,141,.5);
-      letter-spacing: 4px;
+
+    .loader-glitch-wrap {
+      position: relative; text-align: center;
     }
-    .loader-bar-wrap {
-      width: 200px; height: 3px;
-      background: var(--line); position: relative; overflow: hidden;
+    .loader-text {
+      font-family: var(--px);
+      font-size: clamp(1.2rem, 5vw, 2.4rem);
+      color: var(--pink);
+      text-shadow: 0 0 20px rgba(255,77,141,.6);
+      letter-spacing: 6px;
+      position: relative;
     }
-    .loader-bar {
-      height: 100%;
-      background: linear-gradient(90deg, var(--pink), var(--violet));
-      width: 0%;
-      animation: loadBar 1.8s ease forwards;
-      box-shadow: 0 0 10px var(--pink);
+    .loader-text .char {
+      display: inline-block;
+      opacity: 0;
+      animation: charIn .08s ease forwards;
     }
-    @keyframes loadBar { to { width: 100%; } }
+    @keyframes charIn {
+      0%   { opacity: 0; transform: translateY(-10px) skewX(-10deg); filter: blur(4px); color: #fff; }
+      60%  { opacity: 1; transform: translateY(2px) skewX(2deg); filter: blur(0); color: var(--violet); }
+      100% { opacity: 1; transform: translateY(0) skewX(0); color: var(--pink); }
+    }
+    .loader-glitch {
+      position: absolute; inset: 0;
+      font-family: var(--px);
+      font-size: clamp(1.2rem, 5vw, 2.4rem);
+      letter-spacing: 6px;
+      pointer-events: none;
+    }
+    .loader-glitch.g1 {
+      color: var(--sky); opacity: 0;
+      animation: glitch1 3s ease infinite;
+      clip-path: polygon(0 20%, 100% 20%, 100% 40%, 0 40%);
+    }
+    .loader-glitch.g2 {
+      color: var(--violet); opacity: 0;
+      animation: glitch2 3s ease infinite;
+      clip-path: polygon(0 60%, 100% 60%, 100% 80%, 0 80%);
+    }
+    @keyframes glitch1 {
+      0%,90%,100% { opacity: 0; transform: translate(0); }
+      92% { opacity: .8; transform: translate(-4px, 1px); }
+      94% { opacity: .8; transform: translate(4px, -1px); }
+      96% { opacity: 0; }
+    }
+    @keyframes glitch2 {
+      0%,88%,100% { opacity: 0; transform: translate(0); }
+      90% { opacity: .6; transform: translate(3px, 2px); }
+      93% { opacity: .6; transform: translate(-3px, -2px); }
+      95% { opacity: 0; }
+    }
     .loader-sub {
       font-family: var(--px); font-size: .4rem;
-      color: var(--muted); letter-spacing: 3px;
-      animation: blink2 1s step-end infinite;
+      color: var(--muted); letter-spacing: 4px;
+      animation: blink2 .8s step-end infinite;
     }
     @keyframes blink2 { 50% { opacity: 0; } }
+    .loader-line {
+      width: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--pink), transparent);
+      animation: lineGrow 2s ease forwards;
+      box-shadow: 0 0 8px var(--pink);
+    }
+    @keyframes lineGrow { to { width: 280px; } }
 
     /* ── PROGRESS BAR ── */
     #prog {
@@ -670,9 +711,13 @@
 <body>
 
 <div id="loader" aria-hidden="true">
-  <div class="loader-name">あ ┊ 𝐂𝐫𝐚𝐱𝐤𝐞𝐫</div>
-  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
-  <div class="loader-sub">CARGANDO...</div>
+  <div class="loader-glitch-wrap">
+    <div class="loader-text" id="loader-text"></div>
+    <div class="loader-glitch g1" id="loader-g1"></div>
+    <div class="loader-glitch g2" id="loader-g2"></div>
+  </div>
+  <div class="loader-line"></div>
+  <div class="loader-sub">INICIANDO...</div>
 </div>
 <div id="c-dot"  aria-hidden="true"></div>
 <div id="c-ring" aria-hidden="true"></div>
@@ -863,12 +908,29 @@
 (function(){
   const loader = document.getElementById('loader');
   if (!loader) return;
+
+  const NAME = 'あ ┊ CRAXKER';
+  const el   = document.getElementById('loader-text');
+  const g1   = document.getElementById('loader-g1');
+  const g2   = document.getElementById('loader-g2');
+
+  // Escribir letra por letra
+  NAME.split('').forEach((ch, i) => {
+    const span = document.createElement('span');
+    span.className = 'char';
+    span.textContent = ch === ' ' ? ' ' : ch;
+    span.style.animationDelay = (i * 80) + 'ms';
+    el.appendChild(span);
+  });
+  g1.textContent = NAME;
+  g2.textContent = NAME;
+
   function hide() {
     loader.classList.add('hide');
-    setTimeout(() => loader.remove(), 700);
+    setTimeout(() => loader.remove(), 900);
   }
-  window.addEventListener('load', () => setTimeout(hide, 1900));
-  setTimeout(hide, 3000);
+  window.addEventListener('load', () => setTimeout(hide, 2400));
+  setTimeout(hide, 3500);
 })();
 </script>
 </body>
