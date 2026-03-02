@@ -145,6 +145,40 @@
       100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(0); }
     }
 
+
+    /* ══ LOADER DE ENTRADA ══ */
+    #loader {
+      position: fixed; inset: 0; z-index: 99999;
+      background: var(--bg);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 20px;
+      transition: opacity .6s ease, visibility .6s ease;
+    }
+    #loader.hide { opacity: 0; visibility: hidden; }
+    .loader-name {
+      font-family: var(--px); font-size: clamp(1rem, 4vw, 2rem);
+      color: var(--pink); text-shadow: 0 0 20px rgba(255,77,141,.5);
+      letter-spacing: 4px;
+    }
+    .loader-bar-wrap {
+      width: 200px; height: 3px;
+      background: var(--line); position: relative; overflow: hidden;
+    }
+    .loader-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--pink), var(--violet));
+      width: 0%;
+      animation: loadBar 1.8s ease forwards;
+      box-shadow: 0 0 10px var(--pink);
+    }
+    @keyframes loadBar { to { width: 100%; } }
+    .loader-sub {
+      font-family: var(--px); font-size: .4rem;
+      color: var(--muted); letter-spacing: 3px;
+      animation: blink2 1s step-end infinite;
+    }
+    @keyframes blink2 { 50% { opacity: 0; } }
+
     /* ── PROGRESS BAR ── */
     #prog {
       position: fixed; top: 0; left: 0; height: 3px; width: 0;
@@ -635,6 +669,11 @@
 </head>
 <body>
 
+<div id="loader" aria-hidden="true">
+  <div class="loader-name">あ ┊ 𝐂𝐫𝐚𝐱𝐤𝐞𝐫</div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  <div class="loader-sub">CARGANDO...</div>
+</div>
 <div id="c-dot"  aria-hidden="true"></div>
 <div id="c-ring" aria-hidden="true"></div>
 <div id="prog" aria-hidden="true"></div>
@@ -801,6 +840,9 @@
       </a>
       <a href="https://github.com/craxker-hero" target="_blank" rel="noopener noreferrer" class="clink">
         <span class="ci">⌥</span>github.com/craxker-hero
+      </a>
+      <a href="https://www.instagram.com/itsrukas" target="_blank" rel="noopener noreferrer" class="clink">
+        <span class="ci">📸</span>@itsrukas
       </a>
     </div>
   </div>
