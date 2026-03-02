@@ -857,6 +857,17 @@
 </footer>
 
 <script src="./js/projects.js"></script>
-<script src="./js/main.js"></script>
+<script src="./js/main.js">/* ══ LOADER ══ */
+(function(){
+  const loader = document.getElementById('loader');
+  if (!loader) return;
+  function hide() {
+    loader.classList.add('hide');
+    setTimeout(() => loader.remove(), 700);
+  }
+  window.addEventListener('load', () => setTimeout(hide, 1900));
+  setTimeout(hide, 3000);
+})();
+</script>
 </body>
 </html>
