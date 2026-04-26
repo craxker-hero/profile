@@ -1,71 +1,64 @@
-[
+ [
   {
     "id": "21-de-septiembre",
     "number": "01",
+    "featured": True,
     "title": "21 de Septiembre",
-    "tagline": "Una sorpresa digital para el día de las flores amarillas.",
     "why": "Quería crear una experiencia emotiva y personalizada para una fecha especial. El reto fue lograr una página ligera, sin lag, que cargara rápido desde cualquier celular.",
+    "url": "https://21-de-septiembre-wheat.vercel.app/",
+    "image": None,
     "emoji": "🌻",
-    "image": null,
     "tags": [
-      { "label": "HTML5",  "color": "yellow" },
-      { "label": "CSS3",   "color": "cyan"   },
-      { "label": "JavaScript", "color": "green" }
+      { "label": "HTML5",      "color": "yellow" },
+      { "label": "CSS3",       "color": "cyan"   },
+      { "label": "JavaScript", "color": "green"  }
     ],
-    "snippet": {
-      "lang": "CSS",
-      "lines": [
-        { "type": "comment", "text": "/* Animación de flores sin librerías */" },
-        { "type": "fn",      "text": "@keyframes" },
-        { "type": "plain",   "text": " flotar {" },
-        { "type": "plain",   "text": "  0%   { transform: translateY(0)    opacity: 1; }" },
-        { "type": "plain",   "text": "  100% { transform: translateY(-80px) opacity: 0; }" },
-        { "type": "plain",   "text": "}" },
-        { "type": "fn",      "text": ".flor" },
-        { "type": "plain",   "text": " {" },
-        { "type": "plain",   "text": "  animation: flotar 3s ease-in infinite;" },
-        { "type": "plain",   "text": "}" }
-      ]
-    },
     "metrics": [
       { "value": "100",  "label": "Lighthouse" },
       { "value": "0lag", "label": "Performance" },
       { "value": "HTML", "label": "Sin frameworks" }
     ],
-    "url": "https://21-de-septiembre-wheat.vercel.app/",
-    "featured": true
-  }
- {
-  "id": "chamba-mas-facil",
-  "number": "02",
-  "featured": True,
-  "title": "Source Husband",
-  "why": "Busca personajes para gacha y devuelve un JSON con name, value, gender, source y keyword. Soporta Danbooru, Gelbooru, Safebooru y R34.",
-  "url": "https://chamba-mas-f-cil-xd.vercel.app/",
-  "image": None,
-  "emoji": "「✿」",
-  "tags": [
-    { "label": "Python", "color": "cyan" },
-    { "label": "HTML5",  "color": "yellow" },
-    { "label": "CSS3",   "color": "pink" },
-    { "label": "JS",     "color": "green" }
-  ],
-  "metrics": [
-    { "value": "4",    "label": "APIs" },
-    { "value": "Open", "label": "Source" }
-  ],
-  "snippet": {
-    "lang": "JSON",
-    "lines": [
-      { "type": "comment", "text": "// Respuesta del API" },
-      { "type": "plain",   "text": "{" },
-      { "type": "kw",      "text": "  \"name\":" },
-      { "type": "str",     "text": "    \"Rem\"," },
-      { "type": "kw",      "text": "  \"gender\":" },
-      { "type": "str",     "text": "    \"female\"," },
-      { "type": "kw",      "text": "  \"source\":" },
-      { "type": "str",     "text": "    \"danbooru\"" },
-      { "type": "plain",   "text": "}" }
-    ]
+    "snippet": {
+      "lang": "CSS",
+      "lines": [
+        { "type": "comment", "text": "/* Animación flores */" },
+        { "type": "fn",      "text": "@keyframes flotar {" },
+        { "type": "plain",   "text": "  0%   { translateY(0); }" },
+        { "type": "plain",   "text": "  100% { translateY(-80px); }" },
+        { "type": "plain",   "text": "}" }
+      ]
+    }
+  },
+  {
+    "id": "chamba-mas-facil",
+    "number": "02",
+    "featured": True,
+    "title": "Source Husband",
+    "why": "Busca personajes para gacha y devuelve un JSON con name, value, gender, source y keyword. Soporta Danbooru, Gelbooru, Safebooru y R34.",
+    "url": "https://chamba-mas-f-cil-xd.vercel.app/",
+    "image": None,
+    "emoji": "「✿」",
+    "tags": [
+      { "label": "Python", "color": "cyan"   },
+      { "label": "HTML5",  "color": "yellow" },
+      { "label": "CSS3",   "color": "pink"   },
+      { "label": "JS",     "color": "green"  }
+    ],
+    "metrics": [
+      { "value": "4",    "label": "APIs" },
+      { "value": "Open", "label": "Source" }
+    ],
+    "snippet": {
+      "lang": "JSON",
+      "lines": [
+        { "type": "comment", "text": "// Respuesta del API" },
+        { "type": "plain",   "text": "{" },
+        { "type": "kw",      "text": "  \"name\": " },
+        { "type": "str",     "text": "    \"Rem\"," },
+        { "type": "kw",      "text": "  \"source\": " },
+        { "type": "str",     "text": "    \"danbooru\"" },
+        { "type": "plain",   "text": "}" }
+      ]
+    }
   }
 ]
