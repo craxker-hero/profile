@@ -2,62 +2,59 @@
   {
     "id": "21-de-septiembre",
     "number": "01",
-    "featured": True,
+    "featured": true,
     "title": "21 de Septiembre",
-    "why": "Quería crear una experiencia emotiva y personalizada para una fecha especial. El reto fue lograr una página ligera, sin lag, que cargara rápido desde cualquier celular.",
+    "why": "Página de sorpresa para el día de las flores amarillas.",
     "url": "https://21-de-septiembre-wheat.vercel.app/",
-    "image": None,
+    "image": null,
     "emoji": "🌻",
     "tags": [
-      { "label": "HTML5",      "color": "yellow" },
-      { "label": "CSS3",       "color": "cyan"   },
-      { "label": "JavaScript", "color": "green"  }
+      {"label": "HTML5", "color": "yellow"},
+      {"label": "CSS3", "color": "cyan"},
+      {"label": "JavaScript", "color": "green"}
     ],
     "metrics": [
-      { "value": "100",  "label": "Lighthouse" },
-      { "value": "0lag", "label": "Performance" },
-      { "value": "HTML", "label": "Sin frameworks" }
+      {"value": "100", "label": "Lighthouse"},
+      {"value": "0lag", "label": "Performance"}
     ],
     "snippet": {
       "lang": "CSS",
       "lines": [
-        { "type": "comment", "text": "/* Animación flores */" },
-        { "type": "fn",      "text": "@keyframes flotar {" },
-        { "type": "plain",   "text": "  0%   { translateY(0); }" },
-        { "type": "plain",   "text": "  100% { translateY(-80px); }" },
-        { "type": "plain",   "text": "}" }
+        {"type": "comment", "text": "/* Animación flores */"},
+        {"type": "fn", "text": "@keyframes flotar {"},
+        {"type": "plain", "text": "  0%   { translateY(0); }"},
+        {"type": "plain", "text": "  100% { translateY(-80px); }"},
+        {"type": "plain", "text": "}"}
       ]
     }
   },
   {
     "id": "chamba-mas-facil",
     "number": "02",
-    "featured": True,
+    "featured": true,
     "title": "Source Husband",
-    "why": "Busca personajes para gacha y devuelve un JSON con name, value, gender, source y keyword. Soporta Danbooru, Gelbooru, Safebooru y R34.",
+    "why": "Busca personajes para gacha y devuelve JSON con name, value, gender, source y keyword. Soporta Danbooru, Gelbooru, Safebooru y R34.",
     "url": "https://chamba-mas-f-cil-xd.vercel.app/",
-    "image": None,
+    "image": null,
     "emoji": "「✿」",
     "tags": [
-      { "label": "Python", "color": "cyan"   },
-      { "label": "HTML5",  "color": "yellow" },
-      { "label": "CSS3",   "color": "pink"   },
-      { "label": "JS",     "color": "green"  }
+      {"label": "Python", "color": "cyan"},
+      {"label": "HTML5", "color": "yellow"},
+      {"label": "CSS3", "color": "pink"},
+      {"label": "JS", "color": "green"}
     ],
     "metrics": [
-      { "value": "4",    "label": "APIs" },
-      { "value": "Open", "label": "Source" }
+      {"value": "4", "label": "APIs"},
+      {"value": "Open", "label": "Source"}
     ],
     "snippet": {
       "lang": "JSON",
       "lines": [
-        { "type": "comment", "text": "// Respuesta del API" },
-        { "type": "plain",   "text": "{" },
-        { "type": "kw",      "text": "  \"name\": " },
-        { "type": "str",     "text": "    \"Rem\"," },
-        { "type": "kw",      "text": "  \"source\": " },
-        { "type": "str",     "text": "    \"danbooru\"" },
-        { "type": "plain",   "text": "}" }
+        {"type": "comment", "text": "// Respuesta del API"},
+        {"type": "plain", "text": "{"},
+        {"type": "kw", "text": "  \"name\": \"Rem\","},
+        {"type": "kw", "text": "  \"source\": \"danbooru\""},
+        {"type": "plain", "text": "}"}
       ]
     }
   }
