@@ -35,4 +35,37 @@
     "url": "https://21-de-septiembre-wheat.vercel.app/",
     "featured": true
   }
+ {
+  "id": "chamba-mas-facil",
+  "number": "02",
+  "featured": True,
+  "title": "Source Husband",
+  "why": "Busca personajes para gacha y devuelve un JSON con name, value, gender, source y keyword. Soporta Danbooru, Gelbooru, Safebooru y R34.",
+  "url": "https://chamba-mas-f-cil-xd.vercel.app/",
+  "image": None,
+  "emoji": "「✿」",
+  "tags": [
+    { "label": "Python", "color": "cyan" },
+    { "label": "HTML5",  "color": "yellow" },
+    { "label": "CSS3",   "color": "pink" },
+    { "label": "JS",     "color": "green" }
+  ],
+  "metrics": [
+    { "value": "4",    "label": "APIs" },
+    { "value": "Open", "label": "Source" }
+  ],
+  "snippet": {
+    "lang": "JSON",
+    "lines": [
+      { "type": "comment", "text": "// Respuesta del API" },
+      { "type": "plain",   "text": "{" },
+      { "type": "kw",      "text": "  \"name\":" },
+      { "type": "str",     "text": "    \"Rem\"," },
+      { "type": "kw",      "text": "  \"gender\":" },
+      { "type": "str",     "text": "    \"female\"," },
+      { "type": "kw",      "text": "  \"source\":" },
+      { "type": "str",     "text": "    \"danbooru\"" },
+      { "type": "plain",   "text": "}" }
+    ]
+  }
 ]
